@@ -1,0 +1,39 @@
+# Python and notebooks
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# Local-only data formats not used by the submitted notebook
+*.h5
+
+# Local assistants, prompts, drafts, and workflow notes
+.claude/
+CLAUDE.md
+prompt.txt
+workflow.md
+possibili domande.*
+
+# Local build/helper workspace.
+# The submitted notebook is self-contained and does not need these scripts.
+progetto/tmp/
+progetto/output/
+progetto/report.pdf
+
+# LaTeX build files
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+
+# OS/editor
+.DS_Store
+Thumbs.db
