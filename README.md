@@ -9,6 +9,7 @@ A reproducible implementation of a rolling Shannon-entropy algorithm for dynamic
 - [Salvatore Messina](https://github.com/SalvatoreMessina11)
 - [Francesco Florio](https://github.com/Francesco-Florio)
 
+
 ## 🎯 Purpose
 
 The strategy follows a simple principle: concentrate more when returns are relatively ordered and diversify more when they are disordered. Rolling normalized Shannon entropy is used as a market-state signal, not as a direct return forecast.
