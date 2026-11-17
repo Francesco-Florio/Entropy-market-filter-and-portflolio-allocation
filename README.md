@@ -1,16 +1,18 @@
-# 📈 Speculate in Order, Diversify in Disorder
+# Shannon Entropy Signals for Dynamic Top-10 S&P 500 Mean-Variance Allocation
 
-📄 **Final report:** [Messina_Florio.pdf](Messina_Florio.pdf)
+*Speculate in Order, Diversify in Disorder*
+
+📄 **Final report:** [Report_Florio_Messina.pdf](Report_Florio_Messina.pdf)
 
 A reproducible implementation of a rolling Shannon-entropy algorithm for dynamic top-10 equity allocation. The project classifies market conditions as **Bullish**, **Neutral**, or **Bearish** and uses each regime to control the concentration allowed in a long-only mean-variance portfolio.
 
-## 👥 Authors
+## Authors
 
 - [Salvatore Messina](https://github.com/SalvatoreMessina11)
 - [Francesco Florio](https://github.com/Francesco-Florio)
 
 
-## 🎯 Purpose
+## Purpose
 
 The strategy follows a simple principle: concentrate more when returns are relatively ordered and diversify more when they are disordered. Rolling normalized Shannon entropy is used as a market-state signal, not as a direct return forecast.
 
@@ -24,7 +26,7 @@ The daily pipeline:
 6. uses equal weights in the Bearish regime;
 7. compares the strategy with a dynamic equal-weight top-10 portfolio and the S&P 500.
 
-## 🧠 Model
+## Model
 
 | Component | Configuration |
 | --- | --- |
@@ -38,7 +40,7 @@ The daily pipeline:
 
 The 10% Bearish cap implies an equal-weight allocation across the ten active stocks. All rolling inputs are constructed causally to avoid look-ahead bias.
 
-## 🗂️ Repository Structure
+## Repository Structure
 
 ```text
 .
@@ -47,8 +49,8 @@ The 10% Bearish cap implies an equal-weight allocation across the ten active sto
 ├── outputs/                             # Generated tables and diagnostics
 │   ├── figures/                         # Generated visualizations
 │   └── README.md                        # Output data dictionary
-├── Messina_Florio.pdf                   # Final 32-page report
-├── unified_entropy_portfolio.ipynb      # Complete executable analysis
+├── Report_Florio_Messina.pdf                   # Final 32-page report
+├── Florio_Messina.ipynb      # Complete executable analysis
 ├── requirements.txt                     # Python dependencies
 └── README.md
 ```
@@ -59,7 +61,7 @@ Detailed documentation:
 - [Generated output guide](outputs/README.md)
 - [Figure gallery and descriptions](outputs/figures/README.md)
 
-## ⚙️ Setup
+## Setup
 
 Python 3.10 or later is recommended.
 
@@ -69,22 +71,22 @@ python -m venv .venv
 python -m pip install -r requirements.txt
 ```
 
-## ▶️ Run
+## Run
 
-Execute the notebook from the repository root:
+Execute [the notebook](Florio_Messina.ipynb) from the repository root. This command saves an executed copy and preserves the source notebook. The analysis writes regenerated files under `outputs/`.
 
 ```powershell
 python -m jupyter nbconvert `
   --to notebook `
   --execute `
-  --inplace `
+  --output Florio_Messina.executed `
   --ExecutePreprocessor.timeout=3600 `
-  unified_entropy_portfolio.ipynb
+  Florio_Messina.ipynb
 ```
 
 The notebook reads from `data/` and regenerates the CSV and PNG files under `outputs/`.
 
-## 📊 Latest Generated Results
+## Latest Generated Results
 
 The committed run contains 5,382 out-of-sample daily observations.
 
@@ -96,7 +98,7 @@ The committed run contains 5,382 out-of-sample daily observations.
 
 These values describe the supplied historical backtest and are not forecasts of future performance.
 
-## 🧪 Reproducibility Notes
+## Reproducibility Notes
 
 - The three CSV files in `data/` are prepared inputs; raw-data acquisition is outside this repository.
 - The investment universe changes daily and is represented through precomputed top-10 membership.
@@ -104,7 +106,7 @@ These values describe the supplied historical backtest and are not forecasts of 
 - The notebook was executed successfully with all 18 code cells completed and no runtime errors.
 - Generated outputs are intentionally versioned for transparent comparison with future runs.
 
-## 📚 Citation
+## Citation
 
 ```text
 Messina, S., and Florio, F. (2026).
@@ -112,6 +114,6 @@ Speculate in Order, Diversify in Disorder: A Rolling Shannon-Entropy
 Algorithm for Dynamic Top-10 Allocation.
 ```
 
-## ⚠️ Disclaimer
+## Disclaimer
 
 This repository is an academic and educational project. It does not constitute investment advice, a trading recommendation, or a guarantee of future performance.
