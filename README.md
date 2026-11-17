@@ -2,7 +2,7 @@
 
 *Speculate in Order, Diversify in Disorder*
 
-📄 **Final report:** [Report_Florio_Messina.pdf](Report_Florio_Messina.pdf)
+**Project report:** [PDF](Report_Florio_Messina.pdf) · **Analysis:** [Jupyter notebook](Florio_Messina.ipynb)
 
 A reproducible implementation of a rolling Shannon-entropy algorithm for dynamic top-10 equity allocation. The project classifies market conditions as **Bullish**, **Neutral**, or **Bearish** and uses each regime to control the concentration allowed in a long-only mean-variance portfolio.
 
@@ -88,7 +88,7 @@ The notebook reads from `data/` and regenerates the CSV and PNG files under `out
 
 ## Latest Generated Results
 
-The committed run contains 5,382 out-of-sample daily observations.
+The [committed backtest results](outputs/performance_metrics.csv) cover 5,382 out-of-sample daily observations.
 
 | Strategy | Annualized return | Annualized volatility | Sharpe ratio |
 | --- | ---: | ---: | ---: |
@@ -103,7 +103,7 @@ These values describe the supplied historical backtest and are not forecasts of 
 - The three CSV files in `data/` are prepared inputs; raw-data acquisition is outside this repository.
 - The investment universe changes daily and is represented through precomputed top-10 membership.
 - Rolling entropy quantiles and portfolio inputs use information available before each allocation date.
-- The notebook was executed successfully with all 18 code cells completed and no runtime errors.
+- The [co-author's executed notebook](https://github.com/SalvatoreMessina11/Entropy-market-filter-and-portflolio-allocation/blob/main/unified_entropy_portfolio.ipynb) contains saved outputs for all 18 code cells. Both copies contain the same notebook source and prepared input files.
 - Generated outputs are intentionally versioned for transparent comparison with future runs.
 
 ## Citation
